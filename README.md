@@ -24,7 +24,7 @@ This UserScript adds convenient buttons to the bottom-right corner of Reddit pag
 
     *   **[Install Reddit Quick Access](https://github.com/ctrlcmdshft/RedditQuickAccess/raw/refs/heads/main/Reddit-Quick-Access.user.js)**
   
-    *(Alternatively, you can manually copy the code from `Reddit Quick Access.user.js` and create a new script in your UserScript manager.)*
+    *(Alternatively, you can manually copy the code from `Reddit-Quick-Access.user.js` and create a new script in your UserScript manager.)*
 
 ## Usage
 

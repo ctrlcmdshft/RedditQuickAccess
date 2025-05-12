@@ -22,7 +22,7 @@ This UserScript adds convenient buttons to the bottom-right corner of Reddit pag
 
 2.  **Install the Script:** Click the installation link below. Your UserScript manager should detect it and prompt you for installation.
 
-    *   **[Install Reddit Quick Access](https://raw.githubusercontent.com/ctrlcmdshft/RedditQuickAccess/blob/main/Reddit%20Quick%20Access.user.js)** <--- CHANGE THIS LINK
+    *   **[Install Reddit Quick Access](https://github.com/ctrlcmdshft/RedditQuickAccess/raw/refs/heads/main/Reddit%20Quick%20Access.user.js)** <--- CHANGE THIS LINK
   
     *(Alternatively, you can manually copy the code from `Reddit Quick Access.user.js` and create a new script in your UserScript manager.)*
 

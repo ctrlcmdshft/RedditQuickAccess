@@ -7,6 +7,8 @@
 // @match        https://www.reddit.com/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=reddit.com
 // @noframes     Crucial: Prevents the script from running in iframes, avoiding duplicate runs on pages like Messages.
+// @homepageURL  https://github.com/ctrlcmdshft/RedditQuickAccess
+// @homepage     https://github.com/ctrlcmdshft/RedditQuickAccess
 // @downloadURL  https://raw.githubusercontent.com/ctrlcmdshft/RedditQuickAccess/refs/heads/main/Reddit-Quick-Access.user.js
 // @updateURL    https://raw.githubusercontent.com/ctrlcmdshft/RedditQuickAccess/refs/heads/main/Reddit-Quick-Access.user.js
 // @grant        GM_addStyle

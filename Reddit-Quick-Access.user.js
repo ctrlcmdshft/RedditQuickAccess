@@ -1,14 +1,14 @@
 // ==UserScript==
 // @name         Reddit Corner Buttons (Saved Posts & Messages) + Reddit AD Button Hider
-// @namespace    Https://github.com/ctrlcmdshft/RedditQuickAccess
-// @version      1.2 // Version updated
+// @namespace    Https://github.com/ctrlcmdshft/
+// @version      1.2
 // @description  Adds buttons to access Saved Posts and Messages (bottom-right corner) and hides the 'Advertise' button/link on Reddit using its ID. Handles SPA navigation and iframe issues.
 // @author       CtrlCmdShft
 // @match        https://www.reddit.com/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=reddit.com
-// @noframes     // Crucial: Prevents the script from running in iframes, avoiding duplicate runs on pages like Messages.
-// @downloadURL  https://github.com/ctrlcmdshft/RedditQuickAccess/raw/refs/heads/main/Reddit-Quick-Access.user.js
-// @updateURL    https://github.com/ctrlcmdshft/RedditQuickAccess/raw/refs/heads/main/Reddit-Quick-Access.user.js
+// @noframes     Crucial: Prevents the script from running in iframes, avoiding duplicate runs on pages like Messages.
+// @downloadURL  https://raw.githubusercontent.com/ctrlcmdshft/RedditQuickAccess/refs/heads/main/Reddit-Quick-Access.user.js
+// @updateURL    https://raw.githubusercontent.com/ctrlcmdshft/RedditQuickAccess/refs/heads/main/Reddit-Quick-Access.user.js
 // @grant        GM_addStyle
 // @grant        GM_getValue
 // @grant        GM_setValue

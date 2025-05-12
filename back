@@ -33,12 +33,6 @@
     const COMMENTS_PER_REQUEST = 100;
     const MAX_RETRIES = 3;
 
-    const EXPORT_FORMATS = {
-        txt: 'Text (.txt)',
-        json: 'JSON (.json)',
-        csv: 'CSV (.csv)'
-    };
-
     // SVG Icons for the buttons
     const BOOKMARK_ICON_SVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2z"/></svg>`;
     const MAIL_ICON_SVG = `<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="currentColor" aria-hidden="true"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/></svg>`;
@@ -159,49 +153,6 @@
         /* --- Hide the 'Advertise' Button using its ID --- */
         #${ADVERTISE_BUTTON_ID} {
             display: none !important;
-        }
-
-        /* Export Format Menu */
-        .export-format-menu {
-            background: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-            padding: 8px;
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-            z-index: 1002;
-        }
-
-        .export-format-menu button {
-            background: none;
-            border: none;
-            padding: 8px 16px;
-            text-align: left;
-            cursor: pointer;
-            border-radius: 4px;
-            color: #1a1a1b;
-            font-size: 14px;
-            white-space: nowrap;
-        }
-
-        .export-format-menu button:hover {
-            background-color: #f6f7f8;
-        }
-
-        /* Dark mode support */
-        @media (prefers-color-scheme: dark) {
-            .export-format-menu {
-                background: #1a1a1b;
-            }
-            
-            .export-format-menu button {
-                color: #ffffff;
-            }
-            
-            .export-format-menu button:hover {
-                background-color: #272729;
-            }
         }
     `;
     // Inject the styles into the page head.
@@ -335,127 +286,6 @@
         URL.revokeObjectURL(url);
     }
 
-    /* --- Update the createFormatMenu function --- */
-    function createFormatMenu(button, onSelect) {
-        const menu = document.createElement('div');
-        menu.className = 'export-format-menu';
-        
-        // Add format options
-        Object.entries(EXPORT_FORMATS).forEach(([format, label]) => {
-            const option = document.createElement('button');
-            option.textContent = label;
-            option.onclick = () => {
-                onSelect(format);
-                menu.remove();
-            };
-            menu.appendChild(option);
-        });
-
-        // Position menu next to the button with smart placement
-        const buttonRect = button.getBoundingClientRect();
-        const menuPadding = 10; // Space between button and menu
-        
-        menu.style.position = 'fixed';
-        menu.style.right = `${window.innerWidth - buttonRect.left + menuPadding}px`;
-        
-        // Append menu to get its dimensions
-        document.body.appendChild(menu);
-        const menuRect = menu.getBoundingClientRect();
-        
-        // Check if menu would go off screen at the top
-        if (buttonRect.top - menuRect.height < 0) {
-            // Position below the button if not enough space above
-            menu.style.top = `${buttonRect.bottom + menuPadding}px`;
-        } else {
-            // Position above the button
-            menu.style.top = `${buttonRect.top - menuRect.height - menuPadding}px`;
-        }
-
-        // Update styles for the menu
-        const styles = `
-            /* Update Export Format Menu styles */
-            .export-format-menu {
-                position: fixed;
-                background: #ffffff;
-                border-radius: 8px;
-                box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-                padding: 8px;
-                display: flex;
-                flex-direction: column;
-                gap: 4px;
-                z-index: 1002;
-                min-width: 120px;
-                animation: menuFadeIn 0.2s ease;
-            }
-
-            @keyframes menuFadeIn {
-                from {
-                    opacity: 0;
-                    transform: translateY(5px);
-                }
-                to {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-            }
-
-            .export-format-menu button {
-                background: none;
-                border: none;
-                padding: 8px 16px;
-                text-align: left;
-                cursor: pointer;
-                border-radius: 4px;
-                color: #1a1a1b;
-                font-size: 14px;
-                white-space: nowrap;
-                transition: background-color 0.2s ease;
-            }
-
-            .export-format-menu button:hover {
-                background-color: #f6f7f8;
-            }
-
-            /* Dark mode support */
-            @media (prefers-color-scheme: dark) {
-                .export-format-menu {
-                    background: #1a1a1b;
-                    border: 1px solid #343536;
-                }
-                
-                .export-format-menu button {
-                    color: #ffffff;
-                }
-                
-                .export-format-menu button:hover {
-                    background-color: #272729;
-                }
-            }
-        `;
-
-        // Add or update styles
-        const existingStyle = document.getElementById('export-menu-styles');
-        if (!existingStyle) {
-            const styleElement = document.createElement('style');
-            styleElement.id = 'export-menu-styles';
-            styleElement.textContent = styles;
-            document.head.appendChild(styleElement);
-        }
-        
-        // Close menu when clicking outside
-        const closeMenu = (e) => {
-            if (!menu.contains(e.target) && !button.contains(e.target)) {
-                menu.remove();
-                document.removeEventListener('click', closeMenu);
-            }
-        };
-        
-        // Delay adding click listener to prevent immediate closure
-        setTimeout(() => document.addEventListener('click', closeMenu), 0);
-        
-        return menu;
-    }
-
     /**
      * Creates a button element based on provided options.
      * @param {object} options - Button properties (id, title, svgHTML, url).
@@ -472,25 +302,17 @@
 
             if (options.id === EXPORT_COMMENTS_BUTTON_ID) {
                 button.onclick = async function() {
-                    const existingMenu = document.querySelector('.export-format-menu');
-                    if (existingMenu) {
-                        existingMenu.remove();
-                        return;
+                    button.style.opacity = '0.5';
+                    button.style.cursor = 'wait';
+                    try {
+                        const comments = await getAllComments();
+                        downloadComments(comments, 'txt'); // Changed to use text format by default
+                    } catch (error) {
+                        alert('Failed to export comments. Please try again.');
+                    } finally {
+                        button.style.opacity = '1';
+                        button.style.cursor = 'pointer';
                     }
-
-                    createFormatMenu(button, async (format) => {
-                        button.style.opacity = '0.5';
-                        button.style.cursor = 'wait';
-                        try {
-                            const comments = await getAllComments();
-                            downloadComments(comments, format);
-                        } catch (error) {
-                            alert('Failed to export comments. Please try again.');
-                        } finally {
-                            button.style.opacity = '1';
-                            button.style.cursor = 'pointer';
-                        }
-                    });
                 };
             } else {
                 button.onclick = function() {

@@ -4,6 +4,10 @@
 
 This UserScript adds convenient buttons to the bottom-right corner of Reddit pages for quick access to your **Saved Posts** and **Messages Inbox**.
 
+<div align="center">
+  <img height="150" src="https://i.imgur.com/Ztf0Hk6.png"/>
+</div>
+
 ## Features
 
 *   **Saved Posts Button:** An orange button with a bookmark icon that links directly to `https://www.reddit.com/user/me/saved`.

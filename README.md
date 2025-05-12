@@ -1,6 +1,6 @@
 # Reddit Quick Access Buttons UserScript
 
-![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg) <!-- Optional Badge -->
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 This UserScript adds convenient buttons to the bottom-right corner of Reddit pages for quick access to your **Saved Posts** and **Messages Inbox**.
 
@@ -22,7 +22,7 @@ This UserScript adds convenient buttons to the bottom-right corner of Reddit pag
 
 2.  **Install the Script:** Click the installation link below. Your UserScript manager should detect it and prompt you for installation.
 
-    *   **[Install Reddit Quick Access](https://github.com/ctrlcmdshft/RedditQuickAccess/raw/refs/heads/main/Reddit-Quick-Access.user.js)** <--- CHANGE THIS LINK
+    *   **[Install Reddit Quick Access](https://github.com/ctrlcmdshft/RedditQuickAccess/raw/refs/heads/main/Reddit-Quick-Access.user.js)**
   
     *(Alternatively, you can manually copy the code from `Reddit Quick Access.user.js` and create a new script in your UserScript manager.)*
 

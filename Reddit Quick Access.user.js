@@ -1,14 +1,14 @@
 // ==UserScript==
 // @name         Reddit Corner Buttons (Saved Posts & Messages)
-// @namespace    https://github.com/YOUR_USERNAME/YOUR_REPOSITORY_NAME  // <-- CHANGE THIS
-// @version      2.5.1 // Slightly incremented version for repo release
+// @namespace    Https://github.com/ctrlcmdshft/RedditQuickAccess
+// @version      2.1
 // @description  Adds buttons to access Saved Posts and Messages on Reddit (bottom-right corner). Handles SPA navigation and iframe issues.
-// @author       CtrlCmdShft (via User Request)
+// @author       CtrlCmdShft
 // @match        https://www.reddit.com/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=reddit.com
 // @noframes     // Crucial: Prevents the script from running in iframes, avoiding duplicate runs on pages like Messages.
-// @downloadURL  https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPOSITORY_NAME/main/reddit-corner-buttons.user.js // <-- CHANGE THIS
-// @updateURL    https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPOSITORY_NAME/main/reddit-corner-buttons.user.js // <-- CHANGE THIS
+// @downloadURL  https://github.com/ctrlcmdshft/RedditQuickAccess/raw/refs/heads/main/Reddit-Quick-Access.user.js
+// @updateURL    https://github.com/ctrlcmdshft/RedditQuickAccess/raw/refs/heads/main/Reddit-Quick-Access.user.js
 // @grant        GM_addStyle
 // @run-at       document-start // Run early to set the global flag before potential duplicate injections.
 // @license      MIT // Example license, feel free to change

@@ -9,8 +9,8 @@
 // @noframes     Crucial: Prevents the script from running in iframes, avoiding duplicate runs on pages like Messages.
 // @homepageURL  https://github.com/ctrlcmdshft/RedditQuickAccess
 // @homepage     https://github.com/ctrlcmdshft/RedditQuickAccess
-// @downloadURL  https://raw.githubusercontent.com/ctrlcmdshft/RedditQuickAccess/refs/heads/main/Reddit-Quick-Access.user.js
-// @updateURL    https://raw.githubusercontent.com/ctrlcmdshft/RedditQuickAccess/refs/heads/main/Reddit-Quick-Access.user.js
+// @downloadURL  https://raw.githubusercontent.com/ctrlcmdshft/RedditQuickAccess/master/Reddit-Quick-Access.user.js
+// @updateURL    https://raw.githubusercontent.com/ctrlcmdshft/RedditQuickAccess/master/Reddit-Quick-Access.user.js
 // @grant        GM_addStyle
 // @grant        GM_getValue
 // @grant        GM_setValue

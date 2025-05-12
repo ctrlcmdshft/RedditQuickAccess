@@ -163,7 +163,7 @@
 
         /* Export Format Menu */
         .export-format-menu {
-            background: #ffffff;
+            background: #1a9131;
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.2);
             padding: 8px;
@@ -171,6 +171,8 @@
             flex-direction: column;
             gap: 4px;
             z-index: 1002;
+            min-width: 120px;
+            animation: menuFadeIn 0.2s ease;
         }
 
         .export-format-menu button {
@@ -180,19 +182,20 @@
             text-align: left;
             cursor: pointer;
             border-radius: 4px;
-            color: #1a1a1b;
+            color: #ffffff;
             font-size: 14px;
             white-space: nowrap;
+            transition: background-color 0.2s ease;
         }
 
         .export-format-menu button:hover {
-            background-color: #f6f7f8;
+            background-color: #23ad3c;
         }
 
         /* Dark mode support */
         @media (prefers-color-scheme: dark) {
             .export-format-menu {
-                background: #1a1a1b;
+                background: #1a9131;
             }
             
             .export-format-menu button {
@@ -200,7 +203,7 @@
             }
             
             .export-format-menu button:hover {
-                background-color: #272729;
+                background-color: #23ad3c;
             }
         }
     `;

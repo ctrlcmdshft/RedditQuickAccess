@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Reddit Corner Buttons (Saved Posts & Messages) + Reddit AD Button Hider
 // @namespace    Https://github.com/ctrlcmdshft/
-// @version      1.2
+// @version      2.6.1
 // @description  Adds buttons to access Saved Posts and Messages (bottom-right corner) and hides the 'Advertise' button/link on Reddit using its ID. Handles SPA navigation and iframe issues.
 // @author       CtrlCmdShft
 // @match        https://www.reddit.com/*
